@@ -23,7 +23,10 @@
   });
 
   const setCookie = () => {
-    window.postMessage("hola", "https://pet-final.vercel.app/");
+    component.contentWindow.postMessage(
+      "hola",
+      "https://pet-final.vercel.app/"
+    );
     document.cookie = `${value}=${value2}; SameSite=None; Secure`;
   };
 </script>
@@ -35,3 +38,9 @@
 <input bind:value={value2} placeholder="name" />
 
 <button on:click={setCookie}>set</button>
+
+<iframe
+  bind:this={component}
+  src="https://pet-final.vercel.app/"
+  title={undefined}
+/>
