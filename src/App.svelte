@@ -2,6 +2,11 @@
   import { onMount } from "svelte";
 
   /**
+   * @type {HTMLIFrameElement}
+   */
+  let component;
+
+  /**
    * @type {string}
    */
   let value;
@@ -18,6 +23,7 @@
   });
 
   const setCookie = () => {
+    window.postMessage("hola", "https://pet-final.vercel.app/");
     document.cookie = `${value}=${value2}; SameSite=None; Secure`;
   };
 </script>
