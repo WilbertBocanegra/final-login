@@ -13,7 +13,7 @@
 
   onMount(() => {
     window.addEventListener("message", (e) => {
-      console.log(e);
+      console.log(e.currentTarget);
     });
   });
 
