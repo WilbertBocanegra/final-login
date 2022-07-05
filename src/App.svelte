@@ -2,11 +2,6 @@
   import { onMount } from "svelte";
 
   /**
-   * @type {HTMLIFrameElement}
-   */
-  let component;
-
-  /**
    * @type {string}
    */
   let value;
@@ -23,10 +18,7 @@
   });
 
   const setCookie = () => {
-    component.contentWindow.postMessage(
-      "hola",
-      "https://pet-final.vercel.app/"
-    );
+    window.postMessage("hello");
     document.cookie = `${value}=${value2}; SameSite=None; Secure`;
   };
 </script>
@@ -38,9 +30,3 @@
 <input bind:value={value2} placeholder="name" />
 
 <button on:click={setCookie}>set</button>
-
-<iframe
-  bind:this={component}
-  src="https://pet-final.vercel.app/"
-  title={undefined}
-/>
