@@ -12,14 +12,13 @@
   let value2;
 
   onMount(() => {
-    document.cookie = "auth=hola";
     window.addEventListener("message", (e) => {
       console.log(e);
     });
   });
 
   const setCookie = () => {
-    document.cookie = `${value}=${value2}`;
+    document.cookie = `${value}=${value2}; SameSite=None; Secure`;
   };
 </script>
 
